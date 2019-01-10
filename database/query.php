@@ -80,13 +80,24 @@ if(isset($_POST['select'])) {
   }
 
   function consulta7($params) {
-    $q = DBQuery('
-      SELECT COUNT(t.mes_nome) AS qtd, c.causa_acidente, t.mes_nome 
-      FROM fato_acidente f inner join dim_caracteristica c 
-      ON f.sk_caracteristica = c.sk_caracteristica join dim_tempo t 
-      ON f.sk_tempo = t.id_tempo 
-      GROUP BY t.mes_nome, c.causa_acidente where t.mes_abrev in ()
-    ');
+    if (isset($params['meses'])) {
+      $q = DBQuery("
+        SELECT COUNT(t.mes_nome) AS qtd, c.causa_acidente, t.mes_nome 
+        FROM fato_acidente f inner join dim_caracteristica c 
+        ON f.sk_caracteristica = c.sk_caracteristica join dim_tempo t 
+        ON f.sk_tempo = t.id_tempo
+        WHERE t.mes_abrev in (".$params['meses'].")
+        GROUP BY t.mes_nome, c.causa_acidente
+      ");
+    } else {
+      $q = DBQuery('
+        SELECT COUNT(t.mes_nome) AS qtd, c.causa_acidente, t.mes_nome 
+        FROM fato_acidente f inner join dim_caracteristica c 
+        ON f.sk_caracteristica = c.sk_caracteristica join dim_tempo t 
+        ON f.sk_tempo = t.id_tempo 
+        GROUP BY t.mes_nome, c.causa_acidente
+      ');
+    }
 
     $res = mysqli_fetch_all($q, MYSQLI_ASSOC);
 

@@ -1,7 +1,57 @@
+$(function(){
+  $('input[type="checkbox"').change(function(e){
+    if (!e.target.checked) {
+      meses.splice(meses.indexOf(e.target.value), 1);
+    }
+    else {
+      meses.push(e.target.value);
+    }
+  });
 
+  $('#filtrar').click(function(){
+    $.ajax({
+      type: "POST",
+      url: 'database/query.php',
+      data: {
+        select: 'consulta7',
+        meses: '"' + meses.toString().replace(/,/g, '","') + '"'
+      },
+      dataType: 'json',
+      beforeSend: function() {
+        $('#loading').show();
+      },
+      complete: function(res) {
+        $('#loading').hide();
+        const json = res.responseJSON;
+        if (json !== undefined) {
+          const listaData = [];
+          const listaLabel = [];
+          $.each(json, function(i, e) {
+            listaData.push(e.qtd)
+            listaLabel.push(e.causa_acidente)
+          });
+
+          if (listaData.length === 0) {
+            $('#grafico').hide();
+          } else {
+            $('#grafico').show();
+          }
+          
+          pieChart.data.labels = listaLabel;
+          pieChart.data.datasets.data = listaData;
+
+          pieChart.update();
+        }
+      }
+    })
+  })
+
+})
+const meses = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
 const data = {
   select: 'consulta7',
 }
+let pieChart;
 $.ajax({
   type: "POST",
   url: 'database/query.php',
@@ -84,21 +134,11 @@ $.ajax({
         animation: {
           animateScale: true,
           animateRotate: true
-        },
-        // scales: {
-        //   yAxes: [{
-        //       ticks: {
-        //           // Include a dollar sign in the ticks
-        //           callback: function(value, index, values) {
-        //               return '$' + value;
-        //           }
-        //       }
-        //   }]
-        // }
+        }
       };
       // Create the chart
       var pieChartCanvas = $("#grafico").get(0).getContext("2d");
-      var pieChart = new Chart(pieChartCanvas, {
+      pieChart = new Chart(pieChartCanvas, {
         type: 'pie',
         data: doughnutPieData,
         options: doughnutPieOptions

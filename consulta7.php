@@ -96,7 +96,7 @@
                 <div class="card-body">
                   <h4 class="card-title">Filtros</h4>
                   <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-12">
                     <label class="checkbox-inline"><input type="checkbox" value="JAN" checked>Janeiro</label>
                     <label class="checkbox-inline"><input type="checkbox" value="FEV" checked>Fevereiro</label>
                     <label class="checkbox-inline"><input type="checkbox" value="MAR" checked>Março</label>
