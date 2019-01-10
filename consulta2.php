@@ -267,10 +267,10 @@
             </div>
           </div>
 
-          <div class="row" id="card-mapa">
+          <div class="row" style="opacity: 0" id="card-mapa">
               <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
-                  <div class="card-body">
+                  <div class="card-body" id="newMap">
                       <div class="heatmap" id="map-canvas"></div>
                   </div>
                 </div>
