@@ -90,20 +90,32 @@
               <h2>7)Qual a distribuição das causas dos acidentes por período?</h2>
             </div>
           </div>
-          <!-- <div class="row">
+          <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Filtros</h4>
                   <div class="row">
                     <div class="col-md-3">
+                    <label class="checkbox-inline"><input type="checkbox" value="JAN" checked>Janeiro</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="FEV" checked>Fevereiro</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="MAR" checked>Março</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="ABR" checked>Abril</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="MAI" checked>Maio</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="JUN" checked>Junho</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="JUL" checked>Julho</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="AGO" checked>Agosto</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="SET" checked>Setermbro</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="OUT" checked>Outubro</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="NOV" checked>Novembro</label>
+                    <label class="checkbox-inline"><input type="checkbox" value="DEZ" checked>Dezembro</label>
                     </div>
                   </div>
                   <button type="submit" class="btn btn-success mr-2" style="float: right;" id="filtrar">Filtrar</button>
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
 
           <div class="row" id="loading">
             <div class="col-md-12">
