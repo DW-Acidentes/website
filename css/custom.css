@@ -1,0 +1,34 @@
+
+nav > div > h3 {
+  height: unset;
+  margin: auto 0;
+  color: #444;
+  font-weight: 700;
+}
+
+.heatmap {
+    width: 100%;
+    height: 500px;
+  }
+  
+  span.br {
+    background-color: #AAF683;
+    color: #FFFC99;
+    padding: 0 6px;
+  }
+  
+  #loading .card-body {
+    text-align: center;
+  }
+
+  #loading img {
+    height: 200px;
+  }
+
+  #table {
+    width: 100%!important;
+  }
+
+  table#table tbody tr td:first-child {
+    text-transform: uppercase;
+  }
