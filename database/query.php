@@ -62,6 +62,7 @@ if(isset($_POST['select'])) {
   }
 
   function consulta7($params) {
+    set_time_limit(3000);
     $q = DBQuery('
       SELECT COUNT(t.mes_nome) AS qtd, c.causa_acidente, t.mes_nome 
       FROM fato_acidente f inner join dim_caracteristica c 
