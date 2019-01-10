@@ -87,7 +87,7 @@
         <div class="content-wrapper">
           <div class="row">
             <div class="col-md-12">
-              <h2>1)Qual br e de que cidade mais possuem acidentes pessoas em determinadas condições?</h2>
+              <h2>7)Qual a distribuição das causas dos acidentes por período?</h2>
             </div>
           </div>
           <div class="row">
@@ -97,94 +97,35 @@
                   <h4 class="card-title">Filtros</h4>
                   <div class="row">
                     <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="exampleFormControlSelect1">Condições de pista</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                      </div>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-success mr-2" style="float: right;">Filtrar</button>
+                  <button type="submit" class="btn btn-success mr-2" style="float: right;" id="filtrar">Filtrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" id="loading">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-body">
+                  <img src="images/loading.gif" alt="">
+                  <h5>Carregando consulta...</h5>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-              <div class="card card-statistics">
+            <div class="col-md-12">
+              <div class="card">
                 <div class="card-body">
-                  <div class="clearfix">
-                    <div class="float-left">
-                      BR 101
-                    </div>
-                    <div class="float-right">
-                      <p class="mb-0 text-right">Nº ilesos</p>
-                      <div class="fluid-container">
-                        <h3 class="font-weight-medium text-right mb-0">65,650</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-              <div class="card card-statistics">
-                <div class="card-body">
-                  <div class="clearfix">
-                    <div class="float-left">
-                      BR 101
-                    </div>
-                    <div class="float-right">
-                      <p class="mb-0 text-right">Nº feridos leves</p>
-                      <div class="fluid-container">
-                        <h3 class="font-weight-medium text-right mb-0">65,650</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-              <div class="card card-statistics">
-                <div class="card-body">
-                  <div class="clearfix">
-                    <div class="float-left">
-                      BR 101
-                    </div>
-                    <div class="float-right">
-                      <p class="mb-0 text-right">Nº feridos graves</p>
-                      <div class="fluid-container">
-                        <h3 class="font-weight-medium text-right mb-0">65,650</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-              <div class="card card-statistics">
-                <div class="card-body">
-                  <div class="clearfix">
-                    <div class="float-left">
-                      BR 101
-                    </div>
-                    <div class="float-right">
-                      <p class="mb-0 text-right">Nº óbitos</p>
-                      <div class="fluid-container">
-                        <h3 class="font-weight-medium text-right mb-0">65,650</h3>
-                      </div>
-                    </div>
-                  </div>
+                  <canvas id="grafico" style="height:250px"></canvas>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
@@ -214,6 +155,8 @@
   <!-- inject:js -->
   <script src="js/off-canvas.js"></script>
   <script src="js/misc.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/consulta7.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
   <script src="js/dashboard.js"></script>
