@@ -61,7 +61,26 @@ if(isset($_POST['select'])) {
     return json_encode($res);
   }
 
+  function consulta5($params) {
+    set_time_limit(3000);
+    $q = DBQuery('
+    SELECT COUNT(t.mes_abrev) AS qtd, e.estado_fisico, t.mes_abrev, t.mes_nome, c.causa_acidente, c.tipo_acidente, i.idade, s.sexo_desc 
+    FROM fato_acidente f 
+    INNER JOIN dim_estado_fisico e ON f.sk_estado_fisico = e.sk_estado_fisico 
+    INNER JOIN dim_caracteristica c ONf.sk_caracteristica = c.sk_caracteristica 
+    INNER JOIN dim_idade i ON f.sk_idade = i.sk_idade 
+    INNER JOIN dim_sexo s ON f.sk_sexo =s.sk_sexo 
+    INNER JOIN dim_tempo t ON f.sk_tempo = t.id_tempo 
+    GROUP BY t.mes_abrev, e.estado_fisico
+    ');
+
+    $res = mysqli_fetch_all($q, MYSQLI_ASSOC);
+
+    return json_encode($res);
+  }
+
   function consulta7($params) {
+    set_time_limit(3000);
     $q = DBQuery('
       SELECT COUNT(t.mes_nome) AS qtd, c.causa_acidente, t.mes_nome 
       FROM fato_acidente f inner join dim_caracteristica c 
