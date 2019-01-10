@@ -83,30 +83,30 @@
               <span class="menu-title">Acidentes por cidade e BR</span>
             </a>
           </li>
-          <li class="nav-item">
+          <!--li class="nav-item">
             <a class="nav-link" href="consulta3.php">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Acidentes por causa</span>
             </a>
-          </li>
-          <li class="nav-item">
+          </li-->
+          <!--li class="nav-item">
             <a class="nav-link" href="consulta4.php">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Distribuição de acidentes</span>
             </a>
-          </li>
+          </li-->
           <li class="nav-item">
             <a class="nav-link" href="consulta5.php">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Porcentagem de acidentes</span>
             </a>
           </li>
-          <li class="nav-item">
+          <!--li class="nav-item">
             <a class="nav-link" href="consulta6.php">
               <i class="menu-icon mdi mdi-television"></i>
               <span class="menu-title">Distribuição dos tipos<br>de acidentes</span>
             </a>
-          </li>
+          </li-->
           <li class="nav-item">
             <a class="nav-link" href="consulta7.php">
               <i class="menu-icon mdi mdi-television"></i>
